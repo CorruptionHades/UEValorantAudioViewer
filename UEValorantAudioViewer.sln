@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UEValorantAudioViewer", "UEValorantAudioViewer\UEValorantAudioViewer.csproj", "{8794BEF2-C30D-429B-9A02-E368215FCFAB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8794BEF2-C30D-429B-9A02-E368215FCFAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8794BEF2-C30D-429B-9A02-E368215FCFAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8794BEF2-C30D-429B-9A02-E368215FCFAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8794BEF2-C30D-429B-9A02-E368215FCFAB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
