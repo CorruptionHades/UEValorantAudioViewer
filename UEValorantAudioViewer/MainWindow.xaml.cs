@@ -21,6 +21,12 @@ public partial class MainWindow : Window
     {
         Settings.LoadSettings();
         InitializeComponent();
+        ShowPathSelector();
+        Title = "UE Valorant Audio Viewer";
+    }
+    
+    public void ShowPathSelector()
+    {
         MainContent.Content = new PathSelector(this);
     }
 

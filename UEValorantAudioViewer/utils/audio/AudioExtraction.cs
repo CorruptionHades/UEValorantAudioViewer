@@ -30,6 +30,8 @@ public class AudioExtraction {
         // delete the temporary .wem file
         File.Delete(wemFilePath);
         
+        Console.WriteLine("Wav file at \"" + wavPath.Replace("/", "\\") + "\"");
+        
         return wavPath;
     }
 }

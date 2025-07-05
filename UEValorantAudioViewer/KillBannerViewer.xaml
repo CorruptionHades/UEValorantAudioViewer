@@ -18,11 +18,13 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/> <!-- Added for Back Button -->
             </Grid.RowDefinitions>
 
             <TextBox Grid.Row="0" x:Name="SearchBox" Margin="5" TextChanged="SearchBox_TextChanged"/>
             <ListBox Grid.Row="1" x:Name="KillbannerList" Margin="5,0,5,5" SelectionMode="Single" SelectionChanged="KillbannerList_OnSelectionChanged"/>
             <Button Grid.Row="2" Content="View Killbanner" Margin="5" Click="Extract_Click"/>
+            <Button Grid.Row="3" Content="Back" Margin="5" Click="Back_Click"/> <!-- Back Button -->
         </Grid>
 
         <!-- Right Panel -->

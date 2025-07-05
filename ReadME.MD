@@ -7,10 +7,11 @@ View most Valorant sounds and extract them using vgmstream.
 4. Move the executable(s) into the vgm folder
 
 ## Usage
-1. Run the executable
-2. Enter the path to the Paks folder, AES Key and output folder
-3. Click "View Audio" to view all audio files (may take a while depending on your pc)
-4. Click "View Killbanners" to view killbanners. Use the 'View Killbanner' button to view an approximate killbanner
+1. Showcase: https://www.youtube.com/watch?v=xgNKGwfSgeQ
+2. Run the executable
+3. Enter the path to the Paks folder, AES Key and output folder
+4. Click "View Audio" to view all audio files (may take a while depending on your pc)
+5. Click "View Killbanners" to view killbanners. Use the 'View Killbanner' button to view an approximate killbanner
 
 ## Todo
 1.  wwiser (https://github.com/bnnm/wwiser/tree/master)

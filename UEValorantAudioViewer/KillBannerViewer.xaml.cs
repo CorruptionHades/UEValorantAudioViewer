@@ -122,4 +122,13 @@ public partial class KillBannerViewer : UserControl {
         Canvas.SetTop(image, offsetY);
         KillbannerRenderCanvas.Children.Add(image);
     }
+
+    private void Back_Click(object sender, RoutedEventArgs e) {
+        var parentWindow = Window.GetWindow(this);
+        if (parentWindow != null) {
+            if (parentWindow is MainWindow mw) {
+                mw.ShowPathSelector();
+            }
+        }
+    }
 }
