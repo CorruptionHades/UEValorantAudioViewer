@@ -1,0 +1,54 @@
+<UserControl x:Class="UEValorantAudioViewer.KillBannerViewer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:UEValorantAudioViewer"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Left Panel -->
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBox Grid.Row="0" x:Name="SearchBox" Margin="5" TextChanged="SearchBox_TextChanged"/>
+            <ListBox Grid.Row="1" x:Name="KillbannerList" Margin="5,0,5,5" SelectionMode="Single" SelectionChanged="KillbannerList_OnSelectionChanged"/>
+            <Button Grid.Row="2" Content="View Killbanner" Margin="5" Click="Extract_Click"/>
+        </Grid>
+
+        <!-- Right Panel -->
+        <Grid Grid.Column="1" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Details Panel -->
+            <Border Grid.Row="0" BorderBrush="#444" BorderThickness="1" Padding="10">
+                <StackPanel>
+                    <TextBlock Text="Details" FontSize="18" Margin="0 0 0 10"/>
+                    <TextBlock x:Name="Info"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Render Selected Killbanner -->
+            <Border Grid.Row="1" BorderBrush="#444" Background="#0e1923" BorderThickness="1" Padding="10" Margin="0,10,0,0">
+                <StackPanel>
+                    <TextBlock Text="Selected Killbanner Render" FontSize="18" Margin="0 0 0 10"/>
+                    <Canvas x:Name="KillbannerRenderCanvas" Width="200" Height="200" Background="Transparent" 
+                            HorizontalAlignment="Center" 
+                            VerticalAlignment="Center"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,6 +1,7 @@
 using System.Windows.Controls;
 using System.Windows;
 using UEValorantAudioViewer.utils;
+using UEValorantAudioViewer.utils.audio;
 
 namespace UEValorantAudioViewer;
 
@@ -21,7 +22,7 @@ public partial class AudioBrowser : UserControl
         InitializeComponent();
 
         // Sample data
-        allFiles = Service.audioFileList;
+        allFiles = AudioService.audioFileList;
 
         AudioList.ItemsSource = allFiles;
         AudioList.DisplayMemberPath = "DisplayName";
@@ -53,7 +54,7 @@ public partial class AudioBrowser : UserControl
         Console.WriteLine($"Extracting {selected.Count} audio files...");
         foreach (AudioFile audioFile in selected) {
             Console.WriteLine($"Extracting {audioFile.DisplayName} from {audioFile.UAssetSource}");
-            Extraction.Extract(audioFile);
+            AudioExtraction.Extract(audioFile);
         }
         
         MessageBox.Show($"Extracted {selected.Count} audio files to {Settings.settings.OutputFolder}", "Extraction Complete", MessageBoxButton.OK, MessageBoxImage.Information);

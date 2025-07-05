@@ -1,5 +1,6 @@
 using System.Windows.Controls;
 using UEValorantAudioViewer.utils;
+using UEValorantAudioViewer.utils.audio;
 
 namespace UEValorantAudioViewer;
 
@@ -13,10 +14,10 @@ public partial class LoadingScreen : UserControl
         Loaded += async (_, __) =>
         {
             
-            Service.init();
+            Shared.init();
             
             //   await Task.Delay(2000); // Simulate load
-            await Service.getAudio();
+            await AudioService.getAudio();
             _main.ShowAudioBrowser();
         };
     }

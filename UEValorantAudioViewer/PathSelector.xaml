@@ -17,6 +17,7 @@
         <TextBox x:Name="OutFolder" Width="400" Margin="0 0 0 10"/>
         
         <Button Content="Browse..." Click="Browse_Click"/>
-        <Button Content="Confirm" Click="Confirm_Click"/>
+        <Button Content="View Audio" Click="Confirm_Click"/>
+        <Button Content="View Killbanners" Click="Confirm_Killbanner"/>
     </StackPanel>
 </UserControl>

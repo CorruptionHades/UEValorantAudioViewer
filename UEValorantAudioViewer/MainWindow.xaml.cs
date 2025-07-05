@@ -33,4 +33,8 @@ public partial class MainWindow : Window
     {
         MainContent.Content = new AudioBrowser();
     }
+
+    public void ShowKillBanner() {
+        MainContent.Content = new KillBannerViewer();
+    }
 }

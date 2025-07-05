@@ -1,4 +1,4 @@
-namespace UEValorantAudioViewer.utils.old;
+namespace UEValorantAudioViewer.utils.audio.old;
 
 public class FFmpegTool {
 

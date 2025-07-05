@@ -24,10 +24,21 @@ public partial class PathSelector : UserControl
 
     private void Confirm_Click(object sender, RoutedEventArgs e)
     {
+        Save();
+ 
+        _main.ShowLoadingScreen();
+    }
+
+    private void Confirm_Killbanner(object sender, RoutedEventArgs e) {
+        Save();
+ 
+        _main.ShowKillBanner();
+    }
+
+    private void Save() {
         Settings.settings.PaksFolder = PathBox.Text;
         Settings.settings.AesKey = AesBox.Text;
         Settings.settings.OutputFolder = OutFolder.Text;
         Settings.SaveSettings();
-        _main.ShowLoadingScreen();
     }
 }

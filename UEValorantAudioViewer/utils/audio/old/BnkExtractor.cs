@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 using CUE4Parse.FileProvider;
 using CUE4Parse.FileProvider.Objects;
 
-namespace UEValorantAudioViewer.utils.old;
+namespace UEValorantAudioViewer.utils.audio.old;
 
 public static class BnkExtractor {
     
@@ -12,7 +12,7 @@ public static class BnkExtractor {
                                                          + bnkPkgPath.Replace("ShooterGame/Content/WwiseAudio/", "");
         
         Directory.CreateDirectory(Path.GetDirectoryName(filePath));
-        byte[] data = Service.Provider.SaveAsset(bnkPkgPath);
+        byte[] data = Shared.Provider.SaveAsset(bnkPkgPath);
         File.WriteAllBytes(filePath, data);
         
         // python wwiser/wwiser.py Play_UI_KillBanner_SoulStealer_5.bnk

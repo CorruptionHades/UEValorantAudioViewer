@@ -5,25 +5,16 @@ using CUE4Parse.FileProvider.Objects;
 using CUE4Parse.UE4.Objects.Core.Misc;
 using CUE4Parse.UE4.Versions;
 
-namespace UEValorantAudioViewer.utils;
+namespace UEValorantAudioViewer.utils.audio;
 
-public static class Service {
+public static class AudioService {
 
     private static String[] folderPaths = {
         "ShooterGame/Content/WwiseAudio/Events"
     };
     
-    public static DefaultFileProvider Provider;
+    
     public static List<AudioBrowser.AudioFile> audioFileList = new();
-
-    public static void init() {
-
-        Provider = new DefaultFileProvider(Settings.settings.PaksFolder, SearchOption.AllDirectories,
-            new VersionContainer(EGame.GAME_Valorant), StringComparer.Ordinal);
-        
-        Provider.Initialize(); // will scan the archive directory for supported file extensions
-        Provider.SubmitKey(new FGuid(), new FAesKey(Settings.settings.AesKey));
-    }
 
     public static Task<List<AudioBrowser.AudioFile>> getAudio() {
         
@@ -31,7 +22,7 @@ public static class Service {
         Console.WriteLine("Searching for .wem files...");
         Dictionary<string, GameFile> wemFiles = new();
         
-        foreach (var file in Provider.Files) {
+        foreach (var file in Shared.Provider.Files) {
             if (file.Key.EndsWith(".wem")) {
                 wemFiles.Add(file.Key, file.Value);
             }
@@ -44,7 +35,7 @@ public static class Service {
         Console.WriteLine("Searching for event assets...");
         var eventAssets = new List<string>();
         
-        foreach (var file in Provider.Files) {
+        foreach (var file in Shared.Provider.Files) {
             foreach (string folderPath in folderPaths) {
                 if (file.Key.StartsWith(folderPath, StringComparison.OrdinalIgnoreCase) && (file.Key.EndsWith(".uasset")))
                 {
@@ -96,7 +87,7 @@ public static class Service {
     }
     
     private static Dictionary<string, string> LoadNameMap(String pkgPath) {
-        var pkg = Provider.LoadPackage(pkgPath);
+        var pkg = Shared.Provider.LoadPackage(pkgPath);
         
         // Extract the NameMap array
         var nameMap = pkg.NameMap

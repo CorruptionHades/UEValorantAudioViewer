@@ -1,8 +1,8 @@
 using System.IO;
 
-namespace UEValorantAudioViewer.utils;
+namespace UEValorantAudioViewer.utils.audio;
 
-public class Extraction {
+public class AudioExtraction {
 
     public static String Extract(AudioBrowser.AudioFile audioFile) {
         return Extract(audioFile.WemNumberedPath, audioFile.DisplayName);
@@ -14,7 +14,7 @@ public class Extraction {
         Directory.CreateDirectory(Path.GetDirectoryName(filePath));
         
         Console.WriteLine("Extracting " + pkgPath + " to " + wemFilePath);
-        byte[] data = Service.Provider.SaveAsset(pkgPath);
+        byte[] data = Shared.Provider.SaveAsset(pkgPath);
         File.WriteAllBytes(wemFilePath, data);
         Console.WriteLine("Extracted to " + wemFilePath);
         
